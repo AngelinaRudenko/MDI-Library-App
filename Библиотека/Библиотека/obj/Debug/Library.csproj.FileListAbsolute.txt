@@ -1,0 +1,12 @@
+C:\Users\Ангелина\Desktop\Library\Библиотека\Библиотека\bin\Debug\Библиотека.exe.config
+C:\Users\Ангелина\Desktop\Library\Библиотека\Библиотека\bin\Debug\Библиотека.exe
+C:\Users\Ангелина\Desktop\Library\Библиотека\Библиотека\bin\Debug\Библиотека.pdb
+C:\Users\Ангелина\Desktop\Library\Библиотека\Библиотека\obj\Debug\Library.csprojAssemblyReference.cache
+C:\Users\Ангелина\Desktop\Library\Библиотека\Библиотека\obj\Debug\Library.Books.resources
+C:\Users\Ангелина\Desktop\Library\Библиотека\Библиотека\obj\Debug\Library.Main.resources
+C:\Users\Ангелина\Desktop\Library\Библиотека\Библиотека\obj\Debug\Библиотека.Properties.Resources.resources
+C:\Users\Ангелина\Desktop\Library\Библиотека\Библиотека\obj\Debug\Library.Users.resources
+C:\Users\Ангелина\Desktop\Library\Библиотека\Библиотека\obj\Debug\Library.csproj.GenerateResource.cache
+C:\Users\Ангелина\Desktop\Library\Библиотека\Библиотека\obj\Debug\Library.csproj.CoreCompileInputs.cache
+C:\Users\Ангелина\Desktop\Library\Библиотека\Библиотека\obj\Debug\Библиотека.exe
+C:\Users\Ангелина\Desktop\Library\Библиотека\Библиотека\obj\Debug\Библиотека.pdb

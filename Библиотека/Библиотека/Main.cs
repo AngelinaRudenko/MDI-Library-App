@@ -26,6 +26,7 @@ namespace Library
                 booksForm.MdiParent = this;
                 booksForm.FormClosed += BooksForm_FormClosed;
                 booksForm.Show();
+                LayoutMdi(MdiLayout.TileVertical);
             }
             else
                 booksForm.Activate();
@@ -46,7 +47,10 @@ namespace Library
                 usersForm.MdiParent = this;
                 usersForm.FormClosed += UsersForm_FormClosed;
                 usersForm.Show();
+                LayoutMdi(MdiLayout.TileVertical);
             }
+            else
+                usersForm.Activate();
         }
 
         private void UsersForm_FormClosed(object sender, FormClosedEventArgs e)
