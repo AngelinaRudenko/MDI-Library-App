@@ -36,6 +36,10 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.comboBoxSort = new System.Windows.Forms.ComboBox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,7 +110,7 @@
             // buttonAdd
             // 
             this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAdd.Location = new System.Drawing.Point(434, 2);
+            this.buttonAdd.Location = new System.Drawing.Point(436, 4);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(26, 27);
             this.buttonAdd.TabIndex = 5;
@@ -114,11 +118,57 @@
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // comboBoxSort
+            // 
+            this.comboBoxSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSort.FormattingEnabled = true;
+            this.comboBoxSort.Items.AddRange(new object[] {
+            "Имя",
+            "Фамилия",
+            "Отделение",
+            "Группа"});
+            this.comboBoxSort.Location = new System.Drawing.Point(2, 8);
+            this.comboBoxSort.Name = "comboBoxSort";
+            this.comboBoxSort.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSort.TabIndex = 6;
+            this.comboBoxSort.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSort_SelectedIndexChanged);
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Location = new System.Drawing.Point(166, 8);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearch.TabIndex = 7;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Location = new System.Drawing.Point(272, 4);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(59, 27);
+            this.buttonSearch.TabIndex = 8;
+            this.buttonSearch.Text = "Поиск";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(337, 4);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(63, 27);
+            this.buttonClear.TabIndex = 9;
+            this.buttonClear.Text = "Очистить";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.ButtonClear_Click);
+            // 
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 312);
+            this.Controls.Add(this.buttonClear);
+            this.Controls.Add(this.buttonSearch);
+            this.Controls.Add(this.textBoxSearch);
+            this.Controls.Add(this.comboBoxSort);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Users";
@@ -127,6 +177,7 @@
             this.Load += new System.EventHandler(this.Users_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -140,5 +191,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Button buttonClear;
+        public System.Windows.Forms.ComboBox comboBoxSort;
     }
 }

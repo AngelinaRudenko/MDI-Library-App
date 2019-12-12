@@ -39,6 +39,10 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.comboBoxSort = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,31 +138,82 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(434, 3);
+            this.button1.Location = new System.Drawing.Point(436, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(26, 27);
             this.button1.TabIndex = 4;
             this.button1.Text = "+";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(338, 2);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(63, 27);
+            this.buttonClear.TabIndex = 14;
+            this.buttonClear.Text = "Очистить";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.ButtonClear_Click);
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Location = new System.Drawing.Point(273, 2);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(59, 27);
+            this.buttonSearch.TabIndex = 13;
+            this.buttonSearch.Text = "Поиск";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Location = new System.Drawing.Point(167, 7);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearch.TabIndex = 12;
+            // 
+            // comboBoxSort
+            // 
+            this.comboBoxSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSort.FormattingEnabled = true;
+            this.comboBoxSort.Items.AddRange(new object[] {
+            "Название",
+            "Автор",
+            "Шифр ISBN",
+            "ББК",
+            "Издательство",
+            "Год издания",
+            "Дата выдачи",
+            "Срок сдачи"});
+            this.comboBoxSort.Location = new System.Drawing.Point(2, 6);
+            this.comboBoxSort.Name = "comboBoxSort";
+            this.comboBoxSort.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSort.TabIndex = 11;
+            this.comboBoxSort.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSort_SelectedIndexChanged);
             // 
             // Books
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 312);
+            this.Controls.Add(this.buttonClear);
+            this.Controls.Add(this.buttonSearch);
+            this.Controls.Add(this.textBoxSearch);
+            this.Controls.Add(this.comboBoxSort);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Books";
             this.Text = "Управление книгами";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Books_FormClosing);
+            this.Load += new System.EventHandler(this.Books_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -169,5 +224,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.ComboBox comboBoxSort;
     }
 }

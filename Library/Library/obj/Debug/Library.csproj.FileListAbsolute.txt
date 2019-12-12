@@ -11,3 +11,17 @@ C:\Users\Ангелина\Downloads\Library\Library\bin\Debug\Library.exe
 C:\Users\Ангелина\Downloads\Library\Library\bin\Debug\Library.pdb
 C:\Users\Ангелина\Downloads\Library\Library\obj\Debug\Library.exe
 C:\Users\Ангелина\Downloads\Library\Library\obj\Debug\Library.pdb
+C:\Users\Ангелина\Desktop\Library\Library\Library\bin\Debug\Library.exe.config
+C:\Users\Ангелина\Desktop\Library\Library\Library\bin\Debug\Library.exe
+C:\Users\Ангелина\Desktop\Library\Library\Library\bin\Debug\Library.pdb
+C:\Users\Ангелина\Desktop\Library\Library\Library\obj\Debug\Library.csprojAssemblyReference.cache
+C:\Users\Ангелина\Desktop\Library\Library\Library\obj\Debug\Library.Books.resources
+C:\Users\Ангелина\Desktop\Library\Library\Library\obj\Debug\Library.Main.resources
+C:\Users\Ангелина\Desktop\Library\Library\Library\obj\Debug\Library.NewUser.resources
+C:\Users\Ангелина\Desktop\Library\Library\Library\obj\Debug\Library.Properties.Resources.resources
+C:\Users\Ангелина\Desktop\Library\Library\Library\obj\Debug\Library.Users.resources
+C:\Users\Ангелина\Desktop\Library\Library\Library\obj\Debug\Library.csproj.GenerateResource.cache
+C:\Users\Ангелина\Desktop\Library\Library\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+C:\Users\Ангелина\Desktop\Library\Library\Library\obj\Debug\Library.exe
+C:\Users\Ангелина\Desktop\Library\Library\Library\obj\Debug\Library.pdb
+C:\Users\Ангелина\Desktop\Library\Library\Library\obj\Debug\Library.NewBook.resources
