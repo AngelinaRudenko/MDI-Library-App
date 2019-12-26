@@ -8,16 +8,19 @@ namespace Library
 {
     public partial class Users : Form
     {
-        public Users()
+        public Books booksForm;
+        public Users(Books booksForm)
         {
             InitializeComponent();
+            this.booksForm = booksForm;
+            //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void Users_Load(object sender, EventArgs e)
         {
-            comboBoxSort.SelectedItem = "Имя";
+            toolStripComboBoxSort.SelectedItem = "Имя";
             BinaryDeserialization();
-            TableSort(comboBoxSort.SelectedItem.ToString());
+            TableSort(toolStripComboBoxSort.SelectedItem.ToString());
         }
 
         private void Users_FormClosing(object sender, FormClosingEventArgs e)
@@ -25,33 +28,71 @@ namespace Library
             BinarySerialization();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void ToolStripButtonAdd_Click(object sender, EventArgs e)
         {
-            NewUser NewUserForm = new NewUser(this);
+            NewUser NewUserForm = new NewUser(this, booksForm, false);
             NewUserForm.Show();
+            this.Enabled = false;
         }
 
-        private void ComboBoxSort_SelectedIndexChanged(object sender, EventArgs e)
+        private void ToolStripComboBoxSort_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TableSort(comboBoxSort.SelectedItem.ToString());
+            TableSort(toolStripComboBoxSort.SelectedItem.ToString());
         }
 
-        public void BinarySerialization()
+        private void ToolStripButtonSearch_Click(object sender, EventArgs e)
+        {
+            Search(toolStripTextBoxSearch.Text.ToLower());
+        }
+
+        private void ToolStripButtonClear_Click(object sender, EventArgs e)
+        {
+            ClearColor();
+        }
+
+        private void ToolStripButtonRemove_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentCell != null)
+            {
+                int a = dataGridView1.CurrentRow.Index;
+                dataGridView1.Rows.Remove(dataGridView1.Rows[a]);
+            }
+        }
+
+        private void ToolStripButtonEdit_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentCell != null)
+            {
+                NewUser NewUserForm = new NewUser(this, booksForm, true);
+                NewUserForm.Show();
+                this.Enabled = false;
+                NewUserForm.Text = "Редактировать пользователя";
+                NewUserForm.buttonAdd.Text = "Принять";
+                NewUserForm.textBoxName.Text = dataGridView1[0, dataGridView1.CurrentCell.RowIndex].Value.ToString();
+                NewUserForm.textBoxSurname.Text = dataGridView1[1, dataGridView1.CurrentCell.RowIndex].Value.ToString();
+                NewUserForm.textBoxDepartment.Text = dataGridView1[2, dataGridView1.CurrentCell.RowIndex].Value.ToString();
+                NewUserForm.textBoxGroup.Text = dataGridView1[3, dataGridView1.CurrentCell.RowIndex].Value.ToString();
+                NewUserForm.textBoxAddress.Text = dataGridView1[4, dataGridView1.CurrentCell.RowIndex].Value.ToString();
+                NewUserForm.textBoxPhone.Text = dataGridView1[5, dataGridView1.CurrentCell.RowIndex].Value.ToString(); 
+            }
+        }
+
+        private void BinarySerialization()
         {
             UsersClass[] tableUsers = new UsersClass[dataGridView1.Rows.Count - 1];
             ReadGridToArray(tableUsers);    //fill the array with table values
             BinaryFormatter formatter = new BinaryFormatter();
-            using (FileStream fs = new FileStream("UsersInfo.txt", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream("UsersInfo.lib", FileMode.OpenOrCreate))
             {
                 formatter.Serialize(fs, tableUsers);
                 fs.Close();
             }
         }
 
-        public void BinaryDeserialization()
+        private void BinaryDeserialization()
         {
             BinaryFormatter formatter = new BinaryFormatter();
-            using (FileStream fs = new FileStream("UsersInfo.txt", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream("UsersInfo.lib", FileMode.OpenOrCreate))
             {
                 UsersClass[] tableUsers = (UsersClass[])formatter.Deserialize(fs);
                 if (tableUsers != null)
@@ -106,7 +147,7 @@ namespace Library
             return array;
         }
 
-        public void Search(string what)
+        private void Search(string what)
         {
             UsersClass[] array = new UsersClass[dataGridView1.RowCount - 1];
             ReadGridToArray(array);
@@ -129,25 +170,13 @@ namespace Library
 
         private void ClearColor()
         {
-            for (int i = 0; i<dataGridView1.RowCount; i++)
+            for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                dataGridView1[0, i].Style.BackColor = Color.White;
-                dataGridView1[1, i].Style.BackColor = Color.White;
-                dataGridView1[2, i].Style.BackColor = Color.White;
-                dataGridView1[3, i].Style.BackColor = Color.White;
-                dataGridView1[4, i].Style.BackColor = Color.White;
-                dataGridView1[5, i].Style.BackColor = Color.White;
+                for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                {
+                    dataGridView1[j, i].Style.BackColor = Color.White;
+                }
             }
-        }
-
-        private void ButtonSearch_Click(object sender, EventArgs e)
-        {
-            Search(textBoxSearch.Text.ToLower());
-        }
-
-        private void ButtonClear_Click(object sender, EventArgs e)
-        {
-            ClearColor();
         }
     }
 }

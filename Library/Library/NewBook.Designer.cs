@@ -28,80 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxPhone = new System.Windows.Forms.TextBox();
-            this.textBoxAddress = new System.Windows.Forms.TextBox();
-            this.textBoxGroup = new System.Windows.Forms.TextBox();
-            this.textBoxDepartment = new System.Windows.Forms.TextBox();
-            this.textBoxSurname = new System.Windows.Forms.TextBox();
-            this.textBoxName = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewBook));
+            this.textBoxPblshYear = new System.Windows.Forms.TextBox();
+            this.textBoxPblshCmpn = new System.Windows.Forms.TextBox();
+            this.textBoxBBK = new System.Windows.Forms.TextBox();
+            this.textBoxISBN = new System.Windows.Forms.TextBox();
+            this.textBoxAuthor = new System.Windows.Forms.TextBox();
+            this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.textBoxPages = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBoxPhone
+            // textBoxPblshYear
             // 
-            this.textBoxPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxPblshYear.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPhone.Location = new System.Drawing.Point(118, 180);
-            this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(142, 20);
-            this.textBoxPhone.TabIndex = 38;
+            this.textBoxPblshYear.Location = new System.Drawing.Point(118, 180);
+            this.textBoxPblshYear.Name = "textBoxPblshYear";
+            this.textBoxPblshYear.Size = new System.Drawing.Size(142, 20);
+            this.textBoxPblshYear.TabIndex = 38;
             // 
-            // textBoxAddress
+            // textBoxPblshCmpn
             // 
-            this.textBoxAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxPblshCmpn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxAddress.Location = new System.Drawing.Point(118, 148);
-            this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(142, 20);
-            this.textBoxAddress.TabIndex = 37;
+            this.textBoxPblshCmpn.Location = new System.Drawing.Point(118, 148);
+            this.textBoxPblshCmpn.Name = "textBoxPblshCmpn";
+            this.textBoxPblshCmpn.Size = new System.Drawing.Size(142, 20);
+            this.textBoxPblshCmpn.TabIndex = 37;
             // 
-            // textBoxGroup
+            // textBoxBBK
             // 
-            this.textBoxGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxBBK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxGroup.Location = new System.Drawing.Point(118, 116);
-            this.textBoxGroup.Name = "textBoxGroup";
-            this.textBoxGroup.Size = new System.Drawing.Size(142, 20);
-            this.textBoxGroup.TabIndex = 36;
+            this.textBoxBBK.Location = new System.Drawing.Point(118, 116);
+            this.textBoxBBK.Name = "textBoxBBK";
+            this.textBoxBBK.Size = new System.Drawing.Size(142, 20);
+            this.textBoxBBK.TabIndex = 36;
             // 
-            // textBoxDepartment
+            // textBoxISBN
             // 
-            this.textBoxDepartment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxISBN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxDepartment.Location = new System.Drawing.Point(118, 84);
-            this.textBoxDepartment.Name = "textBoxDepartment";
-            this.textBoxDepartment.Size = new System.Drawing.Size(142, 20);
-            this.textBoxDepartment.TabIndex = 35;
+            this.textBoxISBN.Location = new System.Drawing.Point(118, 84);
+            this.textBoxISBN.Name = "textBoxISBN";
+            this.textBoxISBN.Size = new System.Drawing.Size(142, 20);
+            this.textBoxISBN.TabIndex = 35;
             // 
-            // textBoxSurname
+            // textBoxAuthor
             // 
-            this.textBoxSurname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSurname.Location = new System.Drawing.Point(118, 52);
-            this.textBoxSurname.Name = "textBoxSurname";
-            this.textBoxSurname.Size = new System.Drawing.Size(142, 20);
-            this.textBoxSurname.TabIndex = 34;
+            this.textBoxAuthor.Location = new System.Drawing.Point(118, 52);
+            this.textBoxAuthor.Name = "textBoxAuthor";
+            this.textBoxAuthor.Size = new System.Drawing.Size(142, 20);
+            this.textBoxAuthor.TabIndex = 34;
             // 
-            // textBoxName
+            // textBoxTitle
             // 
-            this.textBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxName.Location = new System.Drawing.Point(118, 20);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(142, 20);
-            this.textBoxName.TabIndex = 33;
+            this.textBoxTitle.Location = new System.Drawing.Point(118, 20);
+            this.textBoxTitle.Name = "textBoxTitle";
+            this.textBoxTitle.Size = new System.Drawing.Size(142, 20);
+            this.textBoxTitle.TabIndex = 33;
             // 
             // label6
             // 
@@ -157,26 +154,26 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "Название";
             // 
-            // button1
+            // buttonAdd
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(83, 308);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 30);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.buttonAdd.Location = new System.Drawing.Point(91, 246);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(92, 30);
+            this.buttonAdd.TabIndex = 26;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
             // 
-            // textBox1
+            // textBoxPages
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxPages.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(118, 212);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(142, 20);
-            this.textBox1.TabIndex = 40;
+            this.textBoxPages.Location = new System.Drawing.Point(118, 212);
+            this.textBoxPages.Name = "textBoxPages";
+            this.textBoxPages.Size = new System.Drawing.Size(142, 20);
+            this.textBoxPages.TabIndex = 40;
             // 
             // label7
             // 
@@ -187,94 +184,52 @@
             this.label7.TabIndex = 39;
             this.label7.Text = "Кол-во страниц";
             // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(118, 244);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(142, 20);
-            this.textBox2.TabIndex = 42;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(15, 247);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 13);
-            this.label8.TabIndex = 41;
-            this.label8.Text = "Дата выдачи";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(118, 276);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(142, 20);
-            this.textBox3.TabIndex = 44;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 279);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 13);
-            this.label9.TabIndex = 43;
-            this.label9.Text = "Срок возврата";
-            // 
             // NewBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(281, 349);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox1);
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.ClientSize = new System.Drawing.Size(281, 288);
+            this.Controls.Add(this.textBoxPages);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBoxPhone);
-            this.Controls.Add(this.textBoxAddress);
-            this.Controls.Add(this.textBoxGroup);
-            this.Controls.Add(this.textBoxDepartment);
-            this.Controls.Add(this.textBoxSurname);
-            this.Controls.Add(this.textBoxName);
+            this.Controls.Add(this.textBoxPblshYear);
+            this.Controls.Add(this.textBoxPblshCmpn);
+            this.Controls.Add(this.textBoxBBK);
+            this.Controls.Add(this.textBoxISBN);
+            this.Controls.Add(this.textBoxAuthor);
+            this.Controls.Add(this.textBoxTitle);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonAdd);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Новая книга";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewBook_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBoxPhone;
-        private System.Windows.Forms.TextBox textBoxAddress;
-        private System.Windows.Forms.TextBox textBoxGroup;
-        private System.Windows.Forms.TextBox textBoxDepartment;
-        private System.Windows.Forms.TextBox textBoxSurname;
-        private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.TextBox textBoxTitle;
+        public System.Windows.Forms.TextBox textBoxPblshYear;
+        public System.Windows.Forms.TextBox textBoxPblshCmpn;
+        public System.Windows.Forms.TextBox textBoxBBK;
+        public System.Windows.Forms.TextBox textBoxISBN;
+        public System.Windows.Forms.TextBox textBoxAuthor;
+        public System.Windows.Forms.Button buttonAdd;
+        public System.Windows.Forms.TextBox textBoxPages;
     }
 }

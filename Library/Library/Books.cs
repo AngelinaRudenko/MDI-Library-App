@@ -8,22 +8,19 @@ namespace Library
 {
     public partial class Books : Form
     {
-        public Books()
+        public Books(Users users)
         {
-            InitializeComponent();  
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            NewBook NewBookForm = new NewBook(this);
-            NewBookForm.Show();
+            if (users != null)
+                users.booksForm = this;
+            InitializeComponent();
+            //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void Books_Load(object sender, EventArgs e)
         {
-            comboBoxSort.SelectedItem = "Название";
+            toolStripComboBoxSort.SelectedItem = "Название";
             BinaryDeserialization();
-            TableSort(comboBoxSort.SelectedItem.ToString());
+            TableSort(toolStripComboBoxSort.SelectedItem.ToString());
         }
 
         private void Books_FormClosing(object sender, FormClosingEventArgs e)
@@ -31,34 +28,79 @@ namespace Library
             BinarySerialization();
         }
 
-        private void ComboBoxSort_SelectedIndexChanged(object sender, EventArgs e)
+        private void ToolStripButtonAdd_Click(object sender, EventArgs e)
         {
-            TableSort(comboBoxSort.SelectedItem.ToString());
+            NewBook NewBookForm = new NewBook(this);
+            NewBookForm.Show();
+            this.Enabled = false;
         }
 
-        public void BinarySerialization()
+        private void ToolStripComboBoxSort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TableSort(toolStripComboBoxSort.SelectedItem.ToString());
+        }
+
+        private void ToolStripButtonSearch_Click(object sender, EventArgs e)
+        {
+            Search(toolStripTextBoxSearch.Text.ToLower());
+        }
+
+        private void ToolStripButtonClear_Click(object sender, EventArgs e)
+        {
+            ClearColor();
+        }
+
+        private void ToolStripButtonRemove_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentCell != null)
+            {
+                int a = dataGridView1.CurrentRow.Index;
+                dataGridView1.Rows.Remove(dataGridView1.Rows[a]);
+            }
+        }
+
+        private void ToolStripButtonEdit_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentCell != null)
+            {
+                NewBook NewBookForm = new NewBook(this);
+                NewBookForm.Show();
+                this.Enabled = false;
+                NewBookForm.Text = "Редактировать книгу";
+                NewBookForm.buttonAdd.Text = "Принять";
+                NewBookForm.textBoxTitle.Text = dataGridView1[0, dataGridView1.CurrentCell.RowIndex].Value.ToString();
+                NewBookForm.textBoxAuthor.Text = dataGridView1[1, dataGridView1.CurrentCell.RowIndex].Value.ToString();
+                NewBookForm.textBoxISBN.Text = dataGridView1[2, dataGridView1.CurrentCell.RowIndex].Value.ToString();
+                NewBookForm.textBoxBBK.Text = dataGridView1[3, dataGridView1.CurrentCell.RowIndex].Value.ToString();
+                NewBookForm.textBoxPblshCmpn.Text = dataGridView1[4, dataGridView1.CurrentCell.RowIndex].Value.ToString();
+                NewBookForm.textBoxPblshYear.Text = dataGridView1[5, dataGridView1.CurrentCell.RowIndex].Value.ToString();
+                NewBookForm.textBoxPages.Text = dataGridView1[6, dataGridView1.CurrentCell.RowIndex].Value.ToString();
+            }
+        }
+
+        private void BinarySerialization()
         {
             BooksClass[] tableBooks = new BooksClass[dataGridView1.Rows.Count - 1];
             ReadGridToArray(tableBooks);    //fill the array with table values
             BinaryFormatter formatter = new BinaryFormatter();
-            using (FileStream fs = new FileStream("BooksInfo.txt", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream("BooksInfo.lib", FileMode.OpenOrCreate))
             {
                 formatter.Serialize(fs, tableBooks);
                 fs.Close();
             }
         }
 
-        public void BinaryDeserialization()
+        private void BinaryDeserialization()
         {
             BinaryFormatter formatter = new BinaryFormatter();
-            using (FileStream fs = new FileStream("BooksInfo.txt", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream("BooksInfo.lib", FileMode.OpenOrCreate))
             {
                 BooksClass[] tableBooks = (BooksClass[])formatter.Deserialize(fs);
                 if (tableBooks != null)
                 {
                     foreach (BooksClass book in tableBooks)
                     {
-                        dataGridView1.Rows.Add(book.caption, book.author, book.isbn, book.bbk, book.pblshngCompn, book.pblshYear, book.pages, book.giveDate, book.returnDate);
+                        dataGridView1.Rows.Add(book.caption, book.author, book.isbn, book.bbk, book.pblshngCompn, book.pblshYear, book.pages, book.giveDate, book.returnDate, book.whoTook);
                     }
                 }
                 fs.Close();
@@ -99,7 +141,7 @@ namespace Library
             dataGridView1.Rows.Clear();
             foreach (BooksClass book in tableBooks)
             {
-                dataGridView1.Rows.Add(book.caption, book.author, book.isbn, book.bbk, book.pblshngCompn, book.pblshYear, book.pages, book.giveDate, book.returnDate);
+                dataGridView1.Rows.Add(book.caption, book.author, book.isbn, book.bbk, book.pblshngCompn, book.pblshYear, book.pages, book.giveDate, book.returnDate, book.whoTook);
             }
         }
 
@@ -115,13 +157,17 @@ namespace Library
                 array[i].pblshngCompn = dataGridView1[4, i].Value.ToString();
                 array[i].pblshYear = dataGridView1[5, i].Value.ToString();
                 array[i].pages = dataGridView1[6, i].Value.ToString();
-                array[i].giveDate = dataGridView1[7, i].Value.ToString();
-                array[i].returnDate = dataGridView1[8, i].Value.ToString();
+                if (dataGridView1[7, i].Value != null)
+                    array[i].giveDate = dataGridView1[7, i].Value.ToString();
+                if (dataGridView1[8, i].Value != null)
+                    array[i].returnDate = dataGridView1[8, i].Value.ToString();
+                if (dataGridView1[9, i].Value != null)
+                    array[i].whoTook = dataGridView1[9, i].Value.ToString();
             }
             return array;
         }
 
-        public void Search(string what)
+        private void Search(string what)
         {
             BooksClass[] array = new BooksClass[dataGridView1.RowCount - 1];
             ReadGridToArray(array);
@@ -143,6 +189,8 @@ namespace Library
                     dataGridView1[7, i].Style.BackColor = Color.Green;
                 if (array[i].returnDate.ToLower().Contains(what))
                     dataGridView1[8, i].Style.BackColor = Color.Green;
+                if (array[i].whoTook.ToLower().Contains(what))
+                    dataGridView1[9, i].Style.BackColor = Color.Green;
             }
         }
 
@@ -150,25 +198,11 @@ namespace Library
         {
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                dataGridView1[0, i].Style.BackColor = Color.White;
-                dataGridView1[1, i].Style.BackColor = Color.White;
-                dataGridView1[2, i].Style.BackColor = Color.White;
-                dataGridView1[3, i].Style.BackColor = Color.White;
-                dataGridView1[4, i].Style.BackColor = Color.White;
-                dataGridView1[5, i].Style.BackColor = Color.White;
-                dataGridView1[7, i].Style.BackColor = Color.White;
-                dataGridView1[8, i].Style.BackColor = Color.White;
+                for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                {
+                    dataGridView1[j, i].Style.BackColor = Color.White;
+                }
             }
-        }
-
-        private void ButtonSearch_Click(object sender, EventArgs e)
-        {
-            Search(textBoxSearch.Text.ToLower());
-        }
-
-        private void ButtonClear_Click(object sender, EventArgs e)
-        {
-            ClearColor();
         }
     }
 }

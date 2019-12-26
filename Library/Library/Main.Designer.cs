@@ -28,48 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.импортэкспортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ImportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.задолженностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DebtsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.окноToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BooksAdministrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UsersAdministrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.DebtorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.YellowGreen;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.импортэкспортToolStripMenuItem,
+            this.menuStrip.BackColor = System.Drawing.Color.YellowGreen;
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.задолженностиToolStripMenuItem,
             this.окноToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip.TabIndex = 1;
+            this.menuStrip.Text = "menuStrip1";
             // 
-            // импортэкспортToolStripMenuItem
+            // задолженностиToolStripMenuItem
             // 
-            this.импортэкспортToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ImportToolStripMenuItem,
-            this.ExportToolStripMenuItem});
-            this.импортэкспортToolStripMenuItem.Name = "импортэкспортToolStripMenuItem";
-            this.импортэкспортToolStripMenuItem.Size = new System.Drawing.Size(112, 20);
-            this.импортэкспортToolStripMenuItem.Text = "Импорт/экспорт";
+            this.задолженностиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.DebtsToolStripMenuItem1,
+            this.DebtorsToolStripMenuItem});
+            this.задолженностиToolStripMenuItem.Name = "задолженностиToolStripMenuItem";
+            this.задолженностиToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
+            this.задолженностиToolStripMenuItem.Text = "Задолженности";
             // 
-            // ImportToolStripMenuItem
+            // DebtsToolStripMenuItem1
             // 
-            this.ImportToolStripMenuItem.Name = "ImportToolStripMenuItem";
-            this.ImportToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
-            this.ImportToolStripMenuItem.Text = "Импорт";
-            // 
-            // ExportToolStripMenuItem
-            // 
-            this.ExportToolStripMenuItem.Name = "ExportToolStripMenuItem";
-            this.ExportToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
-            this.ExportToolStripMenuItem.Text = "Экспорт";
+            this.DebtsToolStripMenuItem1.Name = "DebtsToolStripMenuItem1";
+            this.DebtsToolStripMenuItem1.Size = new System.Drawing.Size(212, 22);
+            this.DebtsToolStripMenuItem1.Text = "Показать задолженности";
+            this.DebtsToolStripMenuItem1.Click += new System.EventHandler(this.DebtsToolStripMenuItem1_Click);
             // 
             // окноToolStripMenuItem
             // 
@@ -94,20 +90,29 @@
             this.UsersAdministrationToolStripMenuItem.Text = "Управление пользователями";
             this.UsersAdministrationToolStripMenuItem.Click += new System.EventHandler(this.UsersAdministrationToolStripMenuItem_Click);
             // 
+            // DebtorsToolStripMenuItem
+            // 
+            this.DebtorsToolStripMenuItem.Name = "DebtorsToolStripMenuItem";
+            this.DebtorsToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.DebtorsToolStripMenuItem.Text = "Показать должников";
+            this.DebtorsToolStripMenuItem.Click += new System.EventHandler(this.DebtorsToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menuStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Библиотека";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.SizeChanged += new System.EventHandler(this.Main_SizeChanged);
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,13 +120,13 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem импортэкспортToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ImportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ExportToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem окноToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem BooksAdministrationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem UsersAdministrationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem задолженностиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem DebtsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem DebtorsToolStripMenuItem;
     }
 }
 

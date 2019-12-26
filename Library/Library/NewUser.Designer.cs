@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewUser));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.textBoxGroup = new System.Windows.Forms.TextBox();
@@ -40,13 +43,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.comboBoxBooks = new System.Windows.Forms.ComboBox();
+            this.buttonTakeBook = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonReturnBook = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPhone.Location = new System.Drawing.Point(127, 182);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(142, 20);
@@ -54,8 +63,6 @@
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAddress.Location = new System.Drawing.Point(127, 149);
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(142, 20);
@@ -63,8 +70,6 @@
             // 
             // textBoxGroup
             // 
-            this.textBoxGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxGroup.Location = new System.Drawing.Point(127, 116);
             this.textBoxGroup.Name = "textBoxGroup";
             this.textBoxGroup.Size = new System.Drawing.Size(142, 20);
@@ -72,8 +77,6 @@
             // 
             // textBoxDepartment
             // 
-            this.textBoxDepartment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxDepartment.Location = new System.Drawing.Point(127, 83);
             this.textBoxDepartment.Name = "textBoxDepartment";
             this.textBoxDepartment.Size = new System.Drawing.Size(142, 20);
@@ -81,8 +84,6 @@
             // 
             // textBoxSurname
             // 
-            this.textBoxSurname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSurname.Location = new System.Drawing.Point(127, 50);
             this.textBoxSurname.Name = "textBoxSurname";
             this.textBoxSurname.Size = new System.Drawing.Size(142, 20);
@@ -90,8 +91,6 @@
             // 
             // textBoxName
             // 
-            this.textBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxName.Location = new System.Drawing.Point(127, 17);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(142, 20);
@@ -151,23 +150,103 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Имя";
             // 
-            // button1
+            // buttonAdd
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.buttonAdd.Location = new System.Drawing.Point(100, 220);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(84, 30);
+            this.buttonAdd.TabIndex = 13;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
+            // 
+            // comboBoxBooks
+            // 
+            this.comboBoxBooks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBooks.FormattingEnabled = true;
+            this.comboBoxBooks.Location = new System.Drawing.Point(288, 15);
+            this.comboBoxBooks.Name = "comboBoxBooks";
+            this.comboBoxBooks.Size = new System.Drawing.Size(202, 21);
+            this.comboBoxBooks.TabIndex = 27;
+            // 
+            // buttonTakeBook
+            // 
+            this.buttonTakeBook.Image = ((System.Drawing.Image)(resources.GetObject("buttonTakeBook.Image")));
+            this.buttonTakeBook.Location = new System.Drawing.Point(499, 15);
+            this.buttonTakeBook.Name = "buttonTakeBook";
+            this.buttonTakeBook.Size = new System.Drawing.Size(24, 21);
+            this.buttonTakeBook.TabIndex = 28;
+            this.buttonTakeBook.UseVisualStyleBackColor = true;
+            this.buttonTakeBook.Click += new System.EventHandler(this.ButtonTakeBook_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(100, 220);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 30);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Lavender;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(288, 53);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(268, 197);
+            this.dataGridView1.TabIndex = 29;
+            // 
+            // buttonReturnBook
+            // 
+            this.buttonReturnBook.Image = ((System.Drawing.Image)(resources.GetObject("buttonReturnBook.Image")));
+            this.buttonReturnBook.Location = new System.Drawing.Point(532, 15);
+            this.buttonReturnBook.Name = "buttonReturnBook";
+            this.buttonReturnBook.Size = new System.Drawing.Size(24, 21);
+            this.buttonReturnBook.TabIndex = 30;
+            this.buttonReturnBook.UseVisualStyleBackColor = true;
+            this.buttonReturnBook.Click += new System.EventHandler(this.ButtonReturnBook_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.Frozen = true;
+            this.Column1.HeaderText = "Книга";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 120;
+            // 
+            // Column2
+            // 
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column2.Frozen = true;
+            this.Column2.HeaderText = "Дата выдачи";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 80;
+            // 
+            // Column3
+            // 
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column3.Frozen = true;
+            this.Column3.HeaderText = "Дата возврата";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 80;
             // 
             // NewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.ClientSize = new System.Drawing.Size(568, 262);
+            this.Controls.Add(this.buttonReturnBook);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.buttonTakeBook);
+            this.Controls.Add(this.comboBoxBooks);
             this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.textBoxAddress);
             this.Controls.Add(this.textBoxGroup);
@@ -180,29 +259,39 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonAdd);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Новый пользователь";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewUser_FormClosed);
+            this.Load += new System.EventHandler(this.NewUser_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBoxPhone;
-        private System.Windows.Forms.TextBox textBoxAddress;
-        private System.Windows.Forms.TextBox textBoxGroup;
-        private System.Windows.Forms.TextBox textBoxDepartment;
-        private System.Windows.Forms.TextBox textBoxSurname;
-        private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox textBoxPhone;
+        public System.Windows.Forms.TextBox textBoxAddress;
+        public System.Windows.Forms.TextBox textBoxGroup;
+        public System.Windows.Forms.TextBox textBoxDepartment;
+        public System.Windows.Forms.TextBox textBoxSurname;
+        public System.Windows.Forms.TextBox textBoxName;
+        public System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.ComboBox comboBoxBooks;
+        private System.Windows.Forms.Button buttonTakeBook;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonReturnBook;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }
